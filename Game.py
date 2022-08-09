@@ -33,6 +33,9 @@ class Game:
             if self.is_collision(self.snake.x[0], self.snake.y[0], self.snake.x[i], self.snake.y[i]):
                 raise "Game over"
 
+        if not (0 <= self.snake.x[0] <= self.RES[0] and 0 <= self.snake.y[0] <= self.RES[1]):
+            raise "Game over"
+
     def is_collision(self, x1, y1, x2, y2):
         if x2 - 2 <= x1 and x1 < x2 + self.TAMANHO:
             if y2 - 2 <= y1 and y1 < y2 + self.TAMANHO:
